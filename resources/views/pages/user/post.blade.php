@@ -1,8 +1,18 @@
 @extends('layouts.app') @section('content')
 
+<section class="banner-sec">
+    <div class="container">
+        <div class="row text-center">
+            <div class="welcome-msg">
+                <div class="heading-large">Status of your <span class="logged-in-user">Job !</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container">
 
-    <div class="row justify-content-center">
+    <div class=" ">
         <div class="content table-responsive table-full-width">
             <table class="table table-striped">
                 <thead>
