@@ -6,22 +6,22 @@
 
     <div class="main-panel" style="padding-top:20px; min-height:90vh">
         <div class="container">
-            <div class="col-sm-6">
-                <h1>File Format</h1>
+            <div class="col-md-10">
+                <h2>File Format</h2>
                 {!! Form::open(['method'=>'POST', 'action'=> 'PostFormatController@store']) !!}
-                    <div class="form-group">
+                    <div class="form-group" style="display: inline-block; width:320px;">
                         {!! Form::label('format', 'File Type:') !!}
                         {!! Form::text('format', null, ['class'=>'form-control'])!!}
                     </div>
 
-                    <div class="form-group">
-                        {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
+                    <div class="form-group" style="display: inline-block;">
+                        {!! Form::submit('Add New', ['class'=>'btn btn-primary']) !!}
                     </div>
                 {!! Form::close() !!}
 
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="content">
 
@@ -31,7 +31,7 @@
                             <thead>
                             <tr>
                                 <th>File Type</th>
-                                <th>Delete</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>

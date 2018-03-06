@@ -69,10 +69,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'user'], function () {
     // Route::get('/posts', 'PostController@showUserPost')->name('user.posts');
-    Route::get('/dashboard','HomeController@dashboard')->name('user.dashboard');
+    //Route::get('/dashboard','HomeController@dashboard')->name('user.dashboard');
     Route::get('/{user}/posts', 'PostController@index')->name('user.posts');
+    Route::get('/my-jobs', 'PostController@index')->name('user.my-jobs');
     Route::get('/post/{post}', 'PostController@show')->name('user.index-post');
-    Route::get('/posts/create', 'PostController@create')->name('user.create-post');
+    Route::get('/new-job', 'PostController@create')->name('user.create-post');
+    //Route::get('/posts/create', 'PostController@create')->name('user.create-post');
     Route::post('/post/create', 'PostController@store');
     Route::get('post/{post}/edit', 'PostController@edit')->name('user.edit-post');
     Route::patch('post/{post}/edit', 'PostController@update');

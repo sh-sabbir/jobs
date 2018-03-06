@@ -26,12 +26,12 @@ class PostController extends Controller
     }
 
 
-    public function index($id)
+    public function index()
     {
-        //
-        $user = User::findOrFail($id);
+        //$user = User::findOrFail($id);
+        $user = Auth::user()->id;
         
-        $posts = Post::where("user_id", "=", $user->id)->get();
+        $posts = Post::where("user_id", "=", $user)->get();
 
         $prices = Price::pluck('price','id')->all();
 

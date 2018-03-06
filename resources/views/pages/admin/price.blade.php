@@ -6,22 +6,22 @@
 
     <div class="main-panel" style="padding-top:20px; min-height:90vh">
         <div class="container">
-            <div class="col-sm-6">
-                <h1>Price Range</h1>
+            <div class="col-md-10">
+                <h1>Available Services</h1>
                 {!! Form::open(['method'=>'POST', 'action'=> 'PostPriceController@store']) !!}
-                    <div class="form-group">
-                        {!! Form::label('price', 'Price Range:') !!}
-                        {!! Form::text('price', null, ['class'=>'form-control'])!!}
+                    <div class="form-group" style="display: inline-block; width:320px;">
+                        {!! Form::label('price', 'Service Name:') !!}
+                        {!! Form::text('price', null, ['class'=>'form-control','required'])!!}
                     </div>
 
-                    <div class="form-group">
-                        {!! Form::submit('Create price', ['class'=>'btn btn-primary']) !!}
+                    <div class="form-group" style="display: inline-block;">
+                        {!! Form::submit('Add New', ['class'=>'btn btn-primary']) !!}
                     </div>
                 {!! Form::close() !!}
 
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="content">
 
@@ -31,7 +31,7 @@
                             <thead>
                             <tr>
                                 <th>Price Group</th>
-                                <th>Delete</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="margin-bottom:0px;">
+<nav class="navbar navbar-default" style="margin-bottom:0px; background: #fff;">
         <div class="container-fluid">
             <div class="navbar-header">
                 
@@ -8,8 +8,8 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Jobs') }}
+                <a class="navbar-brand" href="{{ url('/admin') }}" style="margin:  0; padding: 15px;">
+                    <img src="{{asset('img/logo.png')}}" style="width:150px" />
                 </a>
             </div>
 

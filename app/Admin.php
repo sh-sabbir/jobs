@@ -36,5 +36,14 @@ class Admin extends Authenticatable
         $this->notify(new AdminResetPasswordNotification($token));
     }
 
+    function admin_active_class_path($paths, $classes = null)
+    {
+        foreach ((array) $paths as $path) {
+            if (request()->is($path)) {
+                return 'class="' . ($classes ? $classes . ' ' : '') . 'active"';
+            }
+        }
+        return $classes ? 'class="' . $classes . '"' : '';
+    }
 
 }
