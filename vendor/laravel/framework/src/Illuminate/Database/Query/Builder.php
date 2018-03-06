@@ -279,8 +279,6 @@ class Builder
     protected function parseSubSelect($query)
     {
         if ($query instanceof self) {
-            $query->columns = [$query->columns[0]];
-
             return [$query->toSql(), $query->getBindings()];
         } elseif (is_string($query)) {
             return [$query, []];
@@ -1414,6 +1412,10 @@ class Builder
      */
     public function orHaving($column, $operator = null, $value = null)
     {
+        list($value, $operator) = $this->prepareValueAndOperator(
+            $value, $operator, func_num_args() == 2
+        );
+
         return $this->having($column, $operator, $value, 'or');
     }
 
@@ -2519,8 +2521,8 @@ class Builder
             return $this->dynamicWhere($method, $parameters);
         }
 
-        $class = static::class;
-
-        throw new BadMethodCallException("Method {$class}::{$method} does not exist.");
+        throw new BadMethodCallException(sprintf(
+            'Method %s::%s does not exist.', static::class, $method
+        ));
     }
 }
