@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -62,7 +65,9 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('pages.user.edit-profile', compact('user'));
     }
 
     /**
@@ -74,7 +79,29 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        if($file = $request->file('file_id')){
+
+
+            $name = time() . $file->getClientOriginalName();
+
+
+            $file->move('images', $name);
+
+
+            $asset = File::create(['file'=>$name]);
+
+
+            $input['photo_id'] = $asset->id;
+
+        }
+
+
+        Auth::user()->whereId($id)->first()->update($input);
+
+
+        return redirect(route('user.profile'));
     }
 
     /**

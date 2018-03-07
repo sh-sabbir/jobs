@@ -20,7 +20,12 @@
                         <p> Email: {{Auth::user()->email}} </p>
                         <hr>
                         <p> Contact Number: {{Auth::user()->email}} </p>
-
+                        <hr>
+                        <a href=" {{route('profile.edit', Auth::user()->id)}} ">
+                            <div class="btn btn-primary">
+                                Edit profile
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
