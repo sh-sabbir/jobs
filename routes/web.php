@@ -86,7 +86,8 @@ Route::group(['prefix' => 'user'], function () {
 //Route for profile
 Route::resource('/profile', 'ProfileController', [
     'names' => [
-        'index' => 'user.profile'
+        'index' => 'user.profile',
+        'edit'  => 'profile.edit'
     ]
 ]);
 
