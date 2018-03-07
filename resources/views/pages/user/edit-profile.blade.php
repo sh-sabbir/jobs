@@ -16,8 +16,8 @@
                             {!! Form::text('name', null, ['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('number', 'Number:') !!}
-                            {!! Form::text('number', null, ['class'=>'form-control']) !!}
+                            {!! Form::label('contact_number', 'Number:') !!}
+                            {!! Form::text('contact_number', null, ['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('photo_id', 'Attachments:') !!}
