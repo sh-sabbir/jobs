@@ -49,7 +49,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('admin.changePassword')}}">
                                 <i class="ti-settings"></i>
                                 <p>Settings</p>
                             </a>

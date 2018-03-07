@@ -64,7 +64,8 @@ Route::group(['prefix' => 'admin'], function () {
     // Users
     Route::get('/users', 'AdminController@showUsers')->name('admin.users');
 
-
+    Route::get('/changePassword','AdminController@showChangePasswordForm');
+    Route::post('/changePassword','AdminController@changePassword')->name('admin.changePassword');
 });
 
 
