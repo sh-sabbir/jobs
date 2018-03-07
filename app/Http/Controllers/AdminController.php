@@ -88,14 +88,31 @@ class AdminController extends Controller
     }
 
 
-    public function postApprove($id) 
+    public function postApprove(Request $request, $id)
+    {
+        $input = $request->all();
+
+        $post = Post::where('id', '=', $id)->first();
+
+        if($post)
+        {
+            $post->status = 1;
+            $post->update($input);
+            $post->save();
+            
+            return redirect('/admin/jobs');
+        }
+    }
+
+
+    public function postSubmitted($id)
     {
         $post = Post::where('id', '=', $id)->first();
         if($post)
         {
-            $post->is_active = 1;
+            $post->status= 4;
             $post->save();
-            
+
             return redirect('/admin/jobs');
         }
     }
@@ -106,7 +123,7 @@ class AdminController extends Controller
         $post = Post::where('id', '=', $id)->first();
         if($post)
         {
-            $post->is_active = 2;
+            $post->status= 5;
             $post->save();
             
             return redirect('/admin/jobs');

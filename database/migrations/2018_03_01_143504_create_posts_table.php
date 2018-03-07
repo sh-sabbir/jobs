@@ -20,7 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->integer('price_id')->unsigned()->index();
-            $table->integer('admin_price')->unsigned()->nullable();
+            $table->string('admin_price')->nullable();
+            $table->integer('status')->unsigned()->nullable();
             $table->integer('duration_id')->unsigned()->index();
             $table->integer('type_id')->unsigned()->index();
             $table->timestamps();
