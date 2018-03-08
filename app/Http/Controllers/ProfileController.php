@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Photo;
 use App\User;
+use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -84,14 +84,10 @@ class ProfileController extends Controller
 
         if($file = $request->file('photo_id')){
 
-
             $name = time() . $file->getClientOriginalName();
 
             $file->move('images', $name);
-
             $photo = Photo::create(['photo_file'=>$name]);
-
-
             $input['photo_id'] = $photo->id;
 
 
