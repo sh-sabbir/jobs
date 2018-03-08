@@ -10,67 +10,81 @@
     </div>
 </section>
 
-<div class="container">
+<section class="section-jobList">
 
-    <div class=" ">
-        <div class="content table-responsive table-full-width">
-            <table class="table table-striped">
-                <thead>
-                    <th>User</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Created at</th>
-                    <th>Edit</th>
-                    <th>Status</th>
-                </thead>
-                <tbody>
+    <div class="container" style="min-height: 90vh;">
+        <div class="content">
 
-                    @if($posts) 
+            <div class="card w-75">
+              <ul class="list-group list-group-flush">
+                @if($posts) 
+                    @forelse($posts as $post)
+                        <div class="list-group-item job-items">
+                            <div class="job-title">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <a href="{{route('user.index-post', $post->id)}}">{{$post->title}}</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="job-time">{{$post->created_at->diffforhumans()}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-details">
+                                <p>{{$post->description}}</p>
+                            </div>
+                            <div class="job-footer">
+                                <div class="requirements">
+                                    <span class="req-item">{{$post->price->price}}</span>
+                                    <span class="req-item">{{$post->duration->duration}}</span>
+                                    <span class="req-item">{{$post->format->format}}</span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 job-status">
+                                        @if($post->status === null)
+                                            Status: <strong>Pending</strong>
+                                        @elseif($post->status === 1)
+                                            Status: <strong>Admin Approved</strong>
+                                        @elseif($post->status === 2)
+                                            Status: <strong>Working</strong>
+                                        @elseif($post->status === 3)
+                                            Status: <strong>Submitted</strong>
+                                        @elseif($post->status === 4)
+                                            Status: <strong>Complete</strong>
+                                        @elseif($post->status === 5)
+                                            Status: <strong>Rejected</strong>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a class="btn btn-default btn-circle" title="View Details" data-toggle="tooltip" data-placement="top" href="{{route('user.index-post', $post->id)}}">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+
+                                        @if($post->status === null)
+                                            <a class="btn btn-default btn-circle" title="Edit Job" data-toggle="tooltip" data-placement="top" href="{{route('user.edit-post', $post->id)}}">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                        @endif  
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="list-group-item job-items">
+                            You don't have any Job history. Try creating <a href="{{route('user.create-post')}}" style="color: #18d1ac">one.</a>
+                        </div>
+                    @endforelse
                     
-                    @foreach($posts as $post)
-
-                    <tr>
-                        <td> {{$post->user->name}} </td>
-                        <td> <a href=" {{route('user.index-post', $post->id)}} ">{{$post->title}}</a> </td>
-                        <td> {{$post->description}} </td>
-                        <td> {{$post->created_at->diffforhumans()}} </td>
-                        <td> 
-                            @if($post->status === null)
-                                <a href=" {{route('user.edit-post', $post->id)}} "><i class="far fa-edit"></i></a>
-                            @else
-                                Not Editable
-                            @endif 
-                        </td>
-                        <td>
-                            @if($post->status === null)
-                                <strong>Pending</strong>
-                            @elseif($post->status === 1)
-                                <strong>Admin Approved</strong>
-                            @elseif($post->status === 2)
-                                <strong>Working</strong>
-                            @elseif($post->status === 3)
-                                <strong>Submitted</strong>
-                            @elseif($post->status === 4)
-                                <strong>Complete</strong>
-                            @elseif($post->status === 5)
-                                <strong>Rejected</strong>
-                            @endif
-                        </td>
-                    </tr>
-
-                    @endforeach 
-                    
-                    @endif
-
-                </tbody>
-            </table>
-
+                @endif
+              </ul>
+            </div>
 
         </div>
 
     </div>
 
-</div>
+</section>
 
 
 @endsection

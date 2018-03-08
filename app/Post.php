@@ -32,7 +32,7 @@ class Post extends Model
 
 
     public function format(){
-        return $this->belongsTo('App\Filetype');
+        return $this->belongsTo('App\Filetype','id');
     }
 
     public function attachments()

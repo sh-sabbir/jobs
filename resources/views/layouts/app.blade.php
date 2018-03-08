@@ -81,10 +81,10 @@
                 </div>
                 <div class="col-md-8 col-lg-8 ml-auto admin-bar hidden-sm-down">
                     <nav class="nav nav-inline pull-right">
-                        <a href="{{route('home')}}" class="nav-link">Home</a>
-                        <a href="{{route('user.profile')}}" class="nav-link">My Profile</a>
-                        <a href="{{route('user.create-post')}}" class="nav-link">New Job</a>
-                        <a href="{{ route('user.my-jobs') }}" class="nav-link">Review Job</a>
+                        <a href="{{route('home')}}" class="nav-link {{ (\Request::route()->getName() == 'home') ? 'active' : '' }}">Home</a>
+                        <a href="{{route('user.profile')}}" class="nav-link {{ (\Request::route()->getName() == 'user.profile') ? 'active' : '' }}">My Profile</a>
+                        <a href="{{route('user.create-post')}}" class="nav-link {{ (\Request::route()->getName() == 'user.create-post') ? 'active' : '' }}">New Job</a>
+                        <a href="{{ route('user.my-jobs') }}" class="nav-link {{ (\Request::route()->getName() == 'user.my-jobs') ? 'active' : '' }}">Review Job</a>
                         <a href="{{ route('user.logout') }}" class="nav-link"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();"> Log Out</a>
 
@@ -123,8 +123,15 @@
 
     <!-- Scripts -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
     @stack('scripts')
 </body>

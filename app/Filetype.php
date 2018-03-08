@@ -10,4 +10,5 @@ class Filetype extends Model
     protected $fillable = [
         'format',
     ];
+
 }
