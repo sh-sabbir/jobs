@@ -6,7 +6,7 @@
         <div style="min-height: 95vmin;">
             <div class="col-md-4 pull-left">
                 <div class="image my-5">
-                    <p>image</p>
+                    <img class="img img-responsive" src="images/{{Auth::user()->photo ? Auth::user()->photo->photo_file : 'http://placehold.it/200x200'}}" alt="" style="max-width: 100%">
                 </div>
             </div>
             <div class="col-md-8 pull-right">
@@ -19,7 +19,8 @@
                         <hr>
                         <p> Email: {{Auth::user()->email}} </p>
                         <hr>
-                        <p> Contact Number: {{Auth::user()->email}} </p>
+                        <p> Contact Number: {{Auth::user()->contact_number}} </p>
+
                         <hr>
                         <a href=" {{route('profile.edit', Auth::user()->id)}} ">
                             <div class="btn btn-primary">
