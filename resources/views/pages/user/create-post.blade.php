@@ -41,7 +41,7 @@
                     
                     {!! Form::file('file_id', ['class'=>'form-control-file']) !!}
 
-                    @component('partials.uploader', [
+                    @component('partials.droploader', [
                         'title' => 'Upload Post Images',
                         'params' => [
                             'attachable_id' => 1,
