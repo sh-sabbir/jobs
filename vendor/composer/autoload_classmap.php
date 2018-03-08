@@ -8,11 +8,13 @@ $baseDir = dirname($vendorDir);
 return array(
     'AdminUserSeeder' => $baseDir . '/database/seeds/AdminUserSeeder.php',
     'App\\Admin' => $baseDir . '/app/Admin.php',
+    'App\\Attachment' => $baseDir . '/app/Attachment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\File' => $baseDir . '/app/File.php',
     'App\\Filetype' => $baseDir . '/app/Filetype.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
+    'App\\Http\\Controllers\\AttachmentController' => $baseDir . '/app/Http/Controllers/AttachmentController.php',
     'App\\Http\\Controllers\\Auth\\AdminForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/AdminForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\AdminLoginController' => $baseDir . '/app/Http/Controllers/Auth/AdminLoginController.php',
     'App\\Http\\Controllers\\Auth\\AdminResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/AdminResetPasswordController.php',

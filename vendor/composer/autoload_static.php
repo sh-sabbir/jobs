@@ -327,11 +327,13 @@ class ComposerStaticInit752dae2e2f32d44b48b6a7cebacac003
     public static $classMap = array (
         'AdminUserSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminUserSeeder.php',
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
+        'App\\Attachment' => __DIR__ . '/../..' . '/app/Attachment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\File' => __DIR__ . '/../..' . '/app/File.php',
         'App\\Filetype' => __DIR__ . '/../..' . '/app/Filetype.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+        'App\\Http\\Controllers\\AttachmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/AttachmentController.php',
         'App\\Http\\Controllers\\Auth\\AdminForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\AdminLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminLoginController.php',
         'App\\Http\\Controllers\\Auth\\AdminResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminResetPasswordController.php',

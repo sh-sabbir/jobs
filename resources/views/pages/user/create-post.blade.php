@@ -40,6 +40,17 @@
                 <div class="form-group">
                     
                     {!! Form::file('file_id', ['class'=>'form-control-file']) !!}
+
+                    @component('partials.uploader', [
+                        'title' => 'Upload Post Images',
+                        'params' => [
+                            'attachable_id' => 1,
+                            'attachable_type' => 'App\Post'
+                        ],
+                        'acceptedFiles' => '.jpg,.png'
+                    ])
+                    @endcomponent
+
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Create Post',['class'=>'btn btn-primary']) !!}

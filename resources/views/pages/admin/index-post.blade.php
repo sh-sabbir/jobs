@@ -4,8 +4,8 @@
 
     @include('partials.sidebar')
 
-    <div class="main-panel" style="padding-top:20px;">
-        <div class="container">
+    <div class="main-panel" style="padding-top:20px; min-height: 90vh">
+        <div style="padding: 20px;">
             <div class="row justify-content-center" style="display: flex; justify-content: space-between;">
                 <div class="col-md-8">
                     <div class="card">
@@ -22,7 +22,7 @@
                             <hr>
                         </div>
                         <div class="content">
-                            @if($post->status === 0)
+                            @if($post->status === null)
                             {!! Form::model($post, ['method'=>'PATCH', 'action'=> ['AdminController@postApprove', $post->id]]) !!}
                             <div class="form-group">
                                 {!! Form::label('admin_price', 'Set Price: ') !!}

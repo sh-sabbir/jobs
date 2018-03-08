@@ -5,7 +5,7 @@
     @include('partials.sidebar')
 
     <div class="main-panel" style="padding-top:20px; min-height:90vh">
-        <div class="container">
+        <div style="padding: 20px;">
             <div class="col-md-10">
                 <h2>File Format</h2>
                 {!! Form::open(['method'=>'POST', 'action'=> 'PostFormatController@store']) !!}

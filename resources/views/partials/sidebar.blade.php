@@ -34,7 +34,7 @@
             <li class="{{ (\Request::route()->getName() == 'admin.jobs.price') ? 'active' : '' }}">
                 <a href="{{ route('admin.jobs.price') }}">
                     <i class="ti-money"></i>
-                    <p>Price Group Set</p>
+                    <p>Service Settings</p>
                 </a>
             </li>
             <li class="{{ (\Request::route()->getName() == 'admin.jobs.duration') ? 'active' : '' }}">

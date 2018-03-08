@@ -10,7 +10,8 @@ window.Popper = require('popper.js').default;
 
 try {
     window.$ = window.jQuery = require('jquery');
-
+// require dropzone
+    window.Dropzone = require('dropzone');
     require('bootstrap');
 } catch (e) {}
 

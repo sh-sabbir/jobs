@@ -5,7 +5,7 @@
     @include('partials.sidebar')
 
     <div class="main-panel" style="padding-top:20px;">
-        <div class="container">
+        <div style="padding: 20px;">
             <div class="col-md-11">
                 <div class="card">
                     <div class="content table-responsive table-full-width">

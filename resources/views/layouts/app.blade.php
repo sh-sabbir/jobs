@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/front.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
 </head>
 <body>
     <div class="small-top">
@@ -103,8 +105,7 @@
             <div class="copyright-section">
                 <div class="row">
                     <div class="col-md-7">
-                        <p>© 2018 Clipping Service Provider - All Rights Reserved. Developed with <i class="fa fa-heart"
-                                                                                                     style="color: red;"></i>
+                        <p>© 2018 Clipping Service Provider - All Rights Reserved. Developed with <i class="fa fa-heart" style="color: red;"></i>
                             by <a href="http://codeian.com.bd" target="_blank">Codeian</a></p>
                     </div>
                     <div class="col-md-5">
@@ -123,5 +124,8 @@
     <!-- Scripts -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
+
+    @stack('scripts')
 </body>
 </html>

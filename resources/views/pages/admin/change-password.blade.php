@@ -5,8 +5,8 @@
     @include('partials.sidebar')
 
     <div class="main-panel" style="padding-top:20px; min-height:90vh">
-        <div class="container">
-        <div class="row">
+        <div style="padding: 20px;">
+        <div class="">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Change password</div>

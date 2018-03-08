@@ -97,3 +97,5 @@ Route::resource('/profile', 'ProfileController', [
 
 
 
+//Resource for drag n drop
+Route::apiResource('attachments', 'AttachmentController');

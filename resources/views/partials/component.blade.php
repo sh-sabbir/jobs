@@ -1,57 +1,57 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="card">
                     <div class="content">
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="icon-big icon-warning text-center">
-                                    <i class="ti-server"></i>
+                                    <i class="ti-gallery"></i>
                                 </div>
                             </div>
                             <div class="col-xs-7">
                                 <div class="numbers">
-                                    <p>Capacity</p>
-                                    105GB
+                                    <p>Job</p>
+                                    Requests
                                 </div>
                             </div>
                         </div>
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-reload"></i> Updated now
+                                <i class="ti-settings"></i> Mange your Pending Jobs.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="card">
                     <div class="content">
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="icon-big icon-success text-center">
-                                    <i class="ti-wallet"></i>
+                                    <i class="ti-user"></i>
                                 </div>
                             </div>
                             <div class="col-xs-7">
                                 <div class="numbers">
-                                    <p>Revenue</p>
-                                    $1,345
+                                    <p>Manage</p>
+                                    Users
                                 </div>
                             </div>
                         </div>
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-calendar"></i> Last day
+                                <i class="ti-settings"></i> Manage Existing Users
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="card">
                     <div class="content">
                         <div class="row">
@@ -62,21 +62,46 @@
                             </div>
                             <div class="col-xs-7">
                                 <div class="numbers">
-                                    <p>Errors</p>
-                                    23
+                                    <p>Manage</p>
+                                    Services
                                 </div>
                             </div>
                         </div>
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-timer"></i> In the last hour
+                                <i class="ti-settings"></i> Manage Provided Service List
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-info text-center">
+                                    <i class="ti-time"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Manage</p>
+                                    Time Group
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-settings"></i> Manage Available Time Group
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
                 <div class="card">
                     <div class="content">
                         <div class="row">
@@ -87,87 +112,15 @@
                             </div>
                             <div class="col-xs-7">
                                 <div class="numbers">
-                                    <p>Followers</p>
-                                    +45
+                                    <p>Manage</p>
+                                    File Format
                                 </div>
                             </div>
                         </div>
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-reload"></i> Updated now
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Users Behavior</h4>
-                        <p class="category">24 Hours performance</p>
-                    </div>
-                    <div class="content">
-                        <div id="chartHours" class="ct-chart"></div>
-                        <div class="footer">
-                            <div class="chart-legend">
-                                <i class="fa fa-circle text-info"></i> Open
-                                <i class="fa fa-circle text-danger"></i> Click
-                                <i class="fa fa-circle text-warning"></i> Click Second Time
-                            </div>
-                            <hr>
-                            <div class="stats">
-                                <i class="ti-reload"></i> Updated 3 minutes ago
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Email Statistics</h4>
-                        <p class="category">Last Campaign Performance</p>
-                    </div>
-                    <div class="content">
-                        <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-
-                        <div class="footer">
-                            <div class="chart-legend">
-                                <i class="fa fa-circle text-info"></i> Open
-                                <i class="fa fa-circle text-danger"></i> Bounce
-                                <i class="fa fa-circle text-warning"></i> Unsubscribe
-                            </div>
-                            <hr>
-                            <div class="stats">
-                                <i class="ti-timer"></i> Campaign sent 2 days ago
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card ">
-                    <div class="header">
-                        <h4 class="title">2015 Sales</h4>
-                        <p class="category">All products including Taxes</p>
-                    </div>
-                    <div class="content">
-                        <div id="chartActivity" class="ct-chart"></div>
-
-                        <div class="footer">
-                            <div class="chart-legend">
-                                <i class="fa fa-circle text-info"></i> Tesla Model S
-                                <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                            </div>
-                            <hr>
-                            <div class="stats">
-                                <i class="ti-check"></i> Data information certified
+                                <i class="ti-settings"></i> Manage Available Output File Formats.
                             </div>
                         </div>
                     </div>

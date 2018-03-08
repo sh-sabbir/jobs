@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Attachment;
 
 class Post extends Model
 {
@@ -32,5 +33,10 @@ class Post extends Model
 
     public function format(){
         return $this->belongsTo('App\Filetype');
+    }
+
+    public function attachments()
+    {
+        return $this->morphMany(Attachment::class, 'attachable');
     }
 }

@@ -1,14 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-
+<section class="banner-sec">
+    <div class="container">
+        <div class="row text-center">
+            <div class="welcome-msg">
+                <div class="heading-large">Edit your <span class="logged-in-user">Profile !</span></div>
+            </div>
+        </div>
+    </div>
+</section>
     <div class="container">
         <div style="min-height: 95vmin;">
-            <div class="col-sm-12">
+            <div class="col-md-10 offset-md-1 col-sm-12">
                 <div class="card my-5">
-                    <div class="card-header">
-                        <h3> Edit Profile </h3>
-                    </div>
+                
                     <div class="card-body">
                         {!! Form::model($user, ['method'=>'PATCH', 'action'=> ['ProfileController@update', $user->id], 'files'=>true]) !!}
                         <div class="form-group">

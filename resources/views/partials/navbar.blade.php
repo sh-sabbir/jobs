@@ -24,8 +24,7 @@
                     <!-- Authentication Links -->
                     @guest
                     
-                        <li><a href="{{ route('login') }}"><p> Login</p></a></li>
-                        <li><a href="{{ route('register') }}"><p> Register</p></a></li>
+                
                     
                     @else
                         <li class="dropdown">
