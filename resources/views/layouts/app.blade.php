@@ -20,7 +20,7 @@
     <div class="small-top">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <!-- Start Social Links -->
                     <ul class="social-icon pull-left">
                         <li>
@@ -55,12 +55,12 @@
                     </ul>
                     <!-- End Social Links -->
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <!-- Start Contact Info -->
                     <ul class="contact-details desktopOnly pull-right">
-                        <li><a href="mailto:info@clippingserviceprovider.com"><i class="fa fa-envelope-o"></i>
-                                info@clippinggraphics.com</a></li>
-                        <li><a href="tel:+8801636616960"><i class="fa fa-phone"></i> +880 1636616960</a></li>
+                        <li><a href="tel:+8801636616960">Contact: +880 1636616960</a></li>
+                        <li><a href="mailto:info@clippingserviceprovider.com">
+                                Email: info@clippingserviceprovider.com</a></li>
                         <li><a href="#"><i class="fa fa-user"></i> {{Auth::user()->name}}</a></li>
                         <li><a href="{{ route('user.logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
