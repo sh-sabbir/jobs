@@ -28,14 +28,20 @@
                                     <td> <a href=" {{route('admin.index-post', $post->id)}} "> {{$post->title}} </a></td>
                                     <td> {{$post->user->email}} </td>
                                     <td> {{$post->created_at->diffforhumans()}} </td>
-                                    <td> 
-                                        @if($post->is_active === 0)
-                                            <strong>Pending</strong>     
-                                        @elseif($post->is_active === 1)
-                                            <strong>Approved</strong> 
-                                        @elseif($post->is_active === 2)
-                                            <strong>Rejected</strong> 
-                                        @endif 
+                                    <td>
+                                        @if($post->status === null)
+                                            <strong>Pending</strong>
+                                        @elseif($post->status === 1)
+                                            <strong>Admin Approved</strong>
+                                        @elseif($post->status === 2)
+                                            <strong>Working</strong>
+                                        @elseif($post->status === 3)
+                                            <strong>Submitted</strong>
+                                        @elseif($post->status === 4)
+                                            <strong>Complete</strong>
+                                        @elseif($post->status === 5)
+                                            <strong>Rejected</strong>
+                                        @endif
                                     </td>
                                 </tr>
 

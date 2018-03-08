@@ -32,6 +32,9 @@
                     {!! Form::label('type_id', 'Set File Format:') !!}
                     {!! Form::select('type_id', [''=>'Choose File Format'] + $fileTypes, null, ['class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    {!! Form::submit('Update Post', ['class'=>'btn btn-success']) !!}
+                </div>
                 {!! Form::close() !!}
 
                 {!! Form::open(['method'=>'DELETE', 'action'=> ['PostController@destroy', $post->id]]) !!}

@@ -104,7 +104,7 @@ class PostController extends Controller
 
         $user->posts()->create($input);
 
-        return redirect(route('user.dashboard'));
+        return redirect(route('home'));
     }
 
     /**
@@ -173,7 +173,31 @@ class PostController extends Controller
         Auth::user()->posts()->whereId($id)->first()->update($input);
 
 
-        return redirect(route('user.dashboard'));
+        return redirect(route('home'));
+    }
+
+
+    public function userApprovePost($id)
+    {
+        $post = Post::where('id', '=', $id)->first();
+        if($post)
+        {
+            $post->status= 2;
+            $post->save();
+            return redirect('/user/my-jobs');
+        }
+    }
+
+
+    public function userSubmitPost($id)
+    {
+        $post = Post::where('id', '=', $id)->first();
+        if($post)
+        {
+            $post->status= 3;
+            $post->save();
+            return redirect('/user/my-jobs');
+        }
     }
 
     /**

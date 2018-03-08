@@ -16,16 +16,18 @@
                             <p> {{$post->description}} </p>
                             <hr>
                             <p> Price: {{$post->price->price}} </p>
-                            <hr>
                             <p> Time: {{$post->duration->duration}} </p>
                             <hr>
                             <p> {{$post->file ? $post->file->path : 'No attachment available' }} </p>
+                            <hr>
                         </div>
                         <div class="content">
-                            {{--  <a href=""><button type="submit" class="btn btn-success">Approve</button></a>
-                            <button type="submit" class="btn btn-danger">Disapprove</button>  --}}
+                            @if($post->status === 0)
                             {!! Form::model($post, ['method'=>'PATCH', 'action'=> ['AdminController@postApprove', $post->id]]) !!}
                             <div class="form-group">
+                                {!! Form::label('admin_price', 'Set Price: ') !!}
+                                {!! Form::text('admin_price', null, ['class'=>'form-control']) !!}
+                                <hr>
                                 {!! Form::submit('Approve Post', ['class'=>'btn btn-success']) !!}
                             </div>
                             {!! Form::close() !!}
@@ -35,6 +37,14 @@
                                 {!! Form::submit('Disapprove Post', ['class'=>'btn btn-danger']) !!}
                             </div>
                             {!! Form::close() !!}
+
+                            @elseif($post->status === 3)
+                            {!! Form::model($post, ['method'=>'PATCH', 'action'=> ['AdminController@postSubmitted', $post->id]]) !!}
+                            <div class="form-group">
+                                {!! Form::submit('Confirm Post', ['class'=>'btn btn-success']) !!}
+                            </div>
+                            {!! Form::close() !!}
+                            @endif
                         </div>
                     </div>
                 </div>

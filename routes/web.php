@@ -60,11 +60,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/jobs/{job}', 'AdminController@show')->name('admin.index-post');
     Route::patch('/jobs/approve/{job}', 'AdminController@postApprove');
     Route::patch('/jobs/reject/{job}', 'AdminController@postDisapprove');
+    Route::patch('/jobs/submitted/{job}', 'AdminController@postSubmitted');
 
     // Users
     Route::get('/users', 'AdminController@showUsers')->name('admin.users');
 
-
+    Route::get('/changePassword','AdminController@showChangePasswordForm');
+    Route::post('/changePassword','AdminController@changePassword')->name('admin.changePassword');
 });
 
 
@@ -74,6 +76,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{user}/posts', 'PostController@index')->name('user.posts');
     Route::get('/my-jobs', 'PostController@index')->name('user.my-jobs');
     Route::get('/post/{post}', 'PostController@show')->name('user.index-post');
+    Route::patch('/post/{post}/confirm', 'PostController@userApprovePost');
+    Route::patch('/post/{post}/submit', 'PostController@userSubmitPost');
     Route::get('/new-job', 'PostController@create')->name('user.create-post');
     //Route::get('/posts/create', 'PostController@create')->name('user.create-post');
     Route::post('/post/create', 'PostController@store');
