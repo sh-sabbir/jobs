@@ -37,7 +37,8 @@
                                 <div class="requirements">
                                     <span class="req-item">{{$post->price->price}}</span>
                                     <span class="req-item">{{$post->duration->duration}}</span>
-                                    <span class="req-item">{{$post->format->format}}</span>
+                                    <span class="req-item">{{$fileTypes[$post->type_id]}}</span>
+                                    <?php //var_dump($post->type_id);?>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 job-status">

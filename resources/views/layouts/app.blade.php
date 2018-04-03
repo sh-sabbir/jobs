@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
     <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
@@ -25,31 +26,31 @@
                     <ul class="social-icon pull-left">
                         <li>
                             <a class="facebook itl-tooltip" target="_blank" rel="nofollow" data-placement="bottom"
-                               title="facebook" href="https://www.facebook.com/ClippingPathStudio/"><i
+                               title="facebook" href="https://www.facebook.com/Clippingserviceproviders"><i
                                         class="fa fa-facebook"></i></a>
                         </li>
                         <li>
                             <a class="twitter itl-tooltip" target="_blank" rel="nofollow" data-placement="bottom"
-                               title="twitter" href="https://twitter.com/clippinggraphic"><i class="fa fa-twitter"></i></a>
+                               title="twitter" href="https://twitter.com/clippingservics"><i class="fa fa-twitter"></i></a>
                         </li>
                         <li>
                             <a class="google-plus itl-tooltip" target="_blank" rel="nofollow" data-placement="bottom"
-                               title="google-plus" href="https://plus.google.com/+Clippinggraphics"><i
+                               title="google-plus" href="https://plus.google.com/u/0/100186622038909814301"><i
                                         class="fa fa-google-plus"></i></a>
                         </li>
                         <li>
                             <a class="linkedin itl-tooltip" target="_blank" rel="nofollow" data-placement="bottom"
-                               title="linkedin" href="https://www.linkedin.com/company/clipping-graphics"><i
+                               title="linkedin" href="https://www.linkedin.com/company/4802856"><i
                                         class="fa fa-linkedin"></i></a>
                         </li>
-                        <li>
+                        <li style="display: none !important;">
                             <a class="tumblr itl-tooltip" target="_blank" rel="nofollow" data-placement="bottom"
                                title="tumblr" href="http://www.clippinggraphics.tumblr.com/"><i
                                         class="fa fa-tumblr"></i></a>
                         </li>
                         <li>
                             <a class="youtube itl-tooltip" target="_blank" rel="nofollow" data-placement="bottom"
-                               title="youtube" href="https://www.youtube.com/channel/UCPCgyH4kgXPWN5Jd7l5XpKQ"><i
+                               title="youtube" href="https://www.youtube.com/channel/UCy0z99McbWW_6tLCQdjPeog"><i
                                         class="fa fa-youtube"></i></a>
                         </li>
                     </ul>
@@ -61,7 +62,7 @@
                         <li><a href="tel:+8801636616960">Contact: +880 1636616960</a></li>
                         <li><a href="mailto:info@clippingserviceprovider.com">
                                 Email: info@clippingserviceprovider.com</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> {{Auth::user()->name}}</a></li>
+                        <li><a href="{{route('user.profile')}}"><i class="fa fa-user"></i> {{Auth::user()->name}}</a></li>
                         <li><a href="{{ route('user.logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
                                         class="fa fa-power-off"></i> LogOut</a></li>
