@@ -31,7 +31,7 @@ class PostController extends Controller
         //$user = User::findOrFail($id);
         $user = Auth::user()->id;
         
-        $posts = Post::where("user_id", "=", $user)->get();
+        $posts = Post::where("user_id", "=", $user)->orderBy('created_at', 'desc')->get();
 
         $prices = Price::pluck('price','id')->all();
 
@@ -104,7 +104,7 @@ class PostController extends Controller
 
         $user->posts()->create($input);
 
-        return redirect(route('home'));
+        return redirect(route('user.my-jobs'));
     }
 
     /**
@@ -118,7 +118,9 @@ class PostController extends Controller
         //
         $post = Post::findOrFail($id);
 
-        return view('pages.user.index-post', compact('post'));
+        $fileTypes = Filetype::pluck('format', 'id')->all();
+
+        return view('pages.user.index-post', compact('post','fileTypes'));
     }
 
     /**

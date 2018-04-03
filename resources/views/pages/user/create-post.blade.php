@@ -37,21 +37,11 @@
                     {!! Form::label('type_id', 'Return Format *') !!}
                     {!! Form::select('type_id', [''=>'Select an option'] + $fileTypes, null, ['class'=>'form-control'])!!}
                 </div>
+
                 <div class="form-group">
-                    
                     {!! Form::file('file_id', ['class'=>'form-control-file']) !!}
-
-                    @component('partials.droploader', [
-                        'title' => 'Upload Post Images',
-                        'params' => [
-                            'attachable_id' => 1,
-                            'attachable_type' => 'App\Post'
-                        ],
-                        'acceptedFiles' => '.jpg,.png'
-                    ])
-                    @endcomponent
-
                 </div>
+
                 <div class="form-group">
                     {!! Form::submit('Create Post',['class'=>'btn btn-primary']) !!}
                 </div>
